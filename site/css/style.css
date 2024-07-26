@@ -2,13 +2,14 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: linear-gradient(130deg, #06063f 20%,#31a2f2 100%);
+    background: linear-gradient(130deg, #06063f 20%, #31a2f2 100%);
     font-family: Arial, sans-serif;
 }
+
 #sidebar {
     width: 80px;
     transition: width 0.3s;
-    background: linear-gradient(130deg,#015794a8 20%, #09096e 80%);
+    background: linear-gradient(130deg, #015794a8 20%, #09096e 80%);
     color: #fff;
     height: 100vh;
     overflow: hidden;
@@ -21,10 +22,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* Add this to distribute nav items evenly */
     height: 50%;
-    /* Add this to make nav take full height */
-    
 }
 
 #sidebar a {
@@ -37,27 +35,10 @@ body {
     border-bottom: 1px solid #3f3f3f4c;
 }
 
-#sidebar a:hover {
+#sidebar a:hover,
+#sidebar a.active {
     color: #d1a411;
     border-left: 2px solid #d1a411;
-}
-
-#sidebar a.active  {
-    color: #d1a411;
-    border-left: 2px solid #d1a411;
-}
-
-
-
-#sidebar.active {
-    background-color: #444;
-}
-
-#content {
-
-
-    width: calc(100% - 80px);
-    transition: margin-left 0.3s;
 }
 
 #sidebar.expanded {
@@ -68,18 +49,15 @@ body {
     display: flex;
     justify-content: start;
     padding-left: 20px;
-
 }
 
 #sidebar.expanded nav a i {
     margin-right: 10px;
 }
 
-
-
-.icon {
-    text-align: center;
-  
+#content {
+    width: calc(100% - 80px);
+    transition: margin-left 0.3s;
 }
 
 .sota-logo {
@@ -132,142 +110,65 @@ body {
     }
 }
 
-.bubble:nth-child(1) {
-    width: 60px;
-    height: 60px;
-    left: 10%;
-    animation-duration: 14s;
-}
+.bubble:nth-child(1) { width: 60px; height: 60px; left: 10%; animation-duration: 14s; }
+.bubble:nth-child(2) { width: 40px; height: 40px; left: 25%; animation-duration: 12s; }
+.bubble:nth-child(3) { width: 70px; height: 70px; left: 40%; animation-duration: 18s; }
+.bubble:nth-child(4) { width: 30px; height: 30px; left: 55%; animation-duration: 10s; }
+.bubble:nth-child(5) { width: 80px; height: 80px; left: 70%; animation-duration: 16s; }
+.bubble:nth-child(6) { width: 50px; height: 50px; left: 85%; animation-duration: 20s; }
+.bubble:nth-child(7) { width: 90px; height: 90px; left: 100%; animation-duration: 22s; }
 
-.bubble:nth-child(2) {
-    width: 40px;
-    height: 40px;
-    left: 25%;
-    animation-duration: 13s;
-}
-
-.bubble:nth-child(3) {
-    width: 70px;
-    height: 70px;
-    left: 40%;
-    animation-duration: 15s;
-}
-
-.bubble:nth-child(4) {
-    width: 50px;
-    height: 50px;
-    left: 60%;
-    animation-duration: 6s;
-}
-
-.bubble:nth-child(5) {
-    width: 45px;
-    height: 45px;
-    left: 80%;
-    animation-duration: 8s;
-}
-
-.bubble:nth-child(6) {
-    width: 45px;
-    height: 45px;
-    left: 80%;
-    animation-duration: 4s;
-}
-
-.bubble:nth-child(7) {
-    width: 45px;
-    height: 45px;
-    left: 80%;
-    animation-duration: 6s;
-}
-
-
-
-button {
-    background-color: #ffc107;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-right: 20px;
-}
-
-.fa-brands {
-    font-size: 20px;
-    color: #131312;
-    margin: 0 10px;
-    border-radius: 10px;
-}
-
-.fa-brands:hover {
-    color: #ede500;
-    text-shadow: 0 0 10px #ffc107;
-}
-
-
-
-@media only screen and (max-width: 500px) {
-    .sota-logo{
-        flex: 1;
-        padding: 10px 0;
-        
-    }
-    .sidebar {
-        position: fixed;
+@media (max-width: 500px) {
+    #sidebar {
         width: 100%;
         height: 60px;
         bottom: 0;
         top: auto;
         left: 0;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        background: #33333359;
-        /* flex-direction: column;
-        overflow-x: hidden; */
-        transform: translateY(100%);
-        transition: transform 0.3s ease;
-        z-index: 1000;
-    }
-    
-    .sidebar.active {
-        transform: translateY(0);
+        transition: height 0.3s;
     }
 
-    .sidebar a {
+    #sidebar nav {
+        flex-direction: row;
+        height: auto;
+        width: 100%;
+    }
+
+    #sidebar nav a {
         flex: 1;
         padding: 10px 0;
-        font-size: 14px;
+        border-bottom: none;
+        border-right: 1px solid #3f3f3f4c;
     }
-    .sidebar.active {
-        transform: none;
+
+    #sidebar nav a:last-child {
+        border-right: none;
     }
+
+    #sidebar.expanded {
+        height: 100vh;
+    }
+
+    #sidebar.expanded nav {
+        flex-direction: column;
+    }
+
+    #content {
+        width: 100%;
+    }
+
     .container {
-        margin-left: 0;
-        padding-bottom: 80px;
+        margin-right: 0;
     }
-    .sidebar-toggle {
-        display: block;
-    }
-    .a{
-        display: none;
-    }
-   
-   
-    .sidebar-toggle {
-        display: none;
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        font-size: 30px;
-        color: rgb(10, 9, 9);
-        cursor: pointer;
-        z-index: 1000;
+
+    .sota-logo {
+        width: 100px;
+        height: auto;
     }
 }
-
 
 .preply {
 
@@ -320,99 +221,105 @@ button {
         transform: translateX(0);
     }
 }
+
 .navbar {
     background-color: #333;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .navbar-nav {
+}
+
+.navbar-nav {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: space-between;
-  }
-  
-  .nav-item {
+}
+
+.nav-item {
     margin-right: 20px;
-  }
-  
-  .nav-link {
+}
+
+.nav-link {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
-  }
-  
-  .nav-link:hover {
+}
+
+.nav-link:hover {
     color: #ccc;
-  }
-  
-  .navbar-toggler {
+}
+
+.navbar-toggler {
     border: none;
     padding: 0;
     font-size: 1.5rem;
     cursor: pointer;
-  }
-  
-  .navbar-toggler-icon {
+}
+
+.navbar-toggler-icon {
     font-size: 1.5rem;
-  }
-  
-  .collapse {
+}
+
+.collapse {
     display: none;
-  }
-  
- 
-  
-  @media (max-width: 500px) {
-    .navbar-nav {
-      flex-direction: column;
+}
+
+
+
+@media (max-width: 500px) {
+    #sidebar {
+        flex-direction: column;
     }
+
     .nav-item {
-      margin-right: 0;
+        margin-right: 0;
     }
+
     .nav-link {
-      padding: 1rem;
+        padding: 1rem;
     }
-    .a{
-        display: none;
-    }
+
+.image1{
+    display: none;
+}
+
     .sidebar-toggle {
         display: block;
     }
-    .sidebar.active {
+
+    #sidebar.active {
         transform: none;
     }
-    .sidebar{
+
+    #sidebar {
         background-color: #3333336e;
-       
+
     }
-     .sidebar-toggle {
+
+  
+    .image1{
         display: none;
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        font-size: 30px;
-        color: rgb(10, 9, 9);
-        cursor: pointer;
-        z-index: 1000;
     }
-  }
-  .overlay {
+}
+
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(128, 0, 128, 0.8); /* Màu tím với độ trong suốt */
+    background-color: rgba(128, 0, 128, 0.8);
+    /* Màu tím với độ trong suốt */
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
-    z-index: 9999; /* Đảm bảo lớp phủ ở trên cùng */
+    z-index: 9999;
+    /* Đảm bảo lớp phủ ở trên cùng */
 }
+
 .overlay.active {
     opacity: 1;
     pointer-events: auto;

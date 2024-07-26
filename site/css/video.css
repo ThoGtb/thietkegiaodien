@@ -1,18 +1,19 @@
 /* Reset some default styles */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    
+
 }
 
 
 /* Container styling */
 .container {
-   
-   
-    
-   
+
+
+
+
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -91,6 +92,7 @@ body, html {
     border-radius: 10px;
     margin-top: 20px;
 }
+
 .bubble-container {
     position: fixed;
     bottom: 0;
@@ -100,12 +102,14 @@ body, html {
     overflow: hidden;
     z-index: -1;
 }
+
 @media only screen and (max-width: 500px) {
-    .sota-logo{
+    .sota-logo {
         flex: 1;
         padding: 10px 0;
-        
+
     }
+
     .sidebar {
         position: fixed;
         width: 100%;
@@ -123,7 +127,7 @@ body, html {
         transition: transform 0.3s ease;
         z-index: 1000;
     }
-    
+
     .sidebar.active {
         transform: translateY(0);
     }
@@ -138,13 +142,15 @@ body, html {
         margin-left: 0;
         padding-bottom: 80px;
     }
+
     .sidebar-toggle {
         display: block;
     }
-    .a{
+
+    .a {
         display: none;
     }
-   
+
     .sidebar-toggle {
         display: none;
         position: fixed;
@@ -155,35 +161,51 @@ body, html {
         cursor: pointer;
         z-index: 1000;
     }
-   
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: block;
+    }
+
+    .swiper-slide iframe {
+        width: 90%;
+        height: auto;
+    }
 }
+
 @media (max-width: 500px) {
     .navbar-nav {
-      flex-direction: column;
+        flex-direction: column;
     }
+
     .nav-item {
-      margin-right: 0;
+        margin-right: 0;
     }
+
     .nav-link {
-      padding: 1rem;
+        padding: 1rem;
     }
-    .a{
+
+    .a {
         display: none;
     }
+
     .sidebar-toggle {
         display: block;
     }
-    .sidebar{
+
+    .sidebar {
         background-color: #3333336e;
     }
-  }
-  
+}
+
 .bubble {
     position: absolute;
-    bottom: -100px; /* Start off screen */
+    bottom: -100px;
+    /* Start off screen */
     width: 50px;
     height: 50px;
-    background-color: rgb(255, 255, 0); /* Adjust color and opacity */
+    background-color: rgb(255, 255, 0);
+    /* Adjust color and opacity */
     border-radius: 50%;
     animation: rise 10s infinite ease-in-out;
 }
@@ -194,8 +216,10 @@ body, html {
         transform: translateY(0);
         opacity: 1;
     }
+
     100% {
-        transform: translateY(-100vh); /* Move to top of the viewport */
+        transform: translateY(-100vh);
+        /* Move to top of the viewport */
         opacity: 0;
     }
 }
@@ -240,4 +264,3 @@ body, html {
     animation-duration: 11s;
     animation-delay: 2s;
 }
-

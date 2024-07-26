@@ -48,13 +48,14 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: linear-gradient(130deg, #06063f 20%,#31a2f2 100%);
+    background: linear-gradient(130deg, #06063f 20%, #31a2f2 100%);
     font-family: Arial, sans-serif;
 }
+
 #sidebar {
     width: 80px;
     transition: width 0.3s;
-    background: linear-gradient(130deg,#015794a8 20%, #09096e 80%);
+    background: linear-gradient(130deg, #015794a8 20%, #09096e 80%);
     color: #fff;
     height: 100vh;
     overflow: hidden;
@@ -67,10 +68,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* Add this to distribute nav items evenly */
     height: 50%;
-    /* Add this to make nav take full height */
-    
 }
 
 #sidebar a {
@@ -83,27 +81,10 @@ body {
     border-bottom: 1px solid #3f3f3f4c;
 }
 
-#sidebar a:hover {
+#sidebar a:hover,
+#sidebar a.active {
     color: #d1a411;
     border-left: 2px solid #d1a411;
-}
-
-#sidebar a.active  {
-    color: #d1a411;
-    border-left: 2px solid #d1a411;
-}
-
-
-
-#sidebar.active {
-    background-color: #444;
-}
-
-#content {
-
-    padding: 20px;
-    width: calc(100% - 80px);
-    transition: margin-left 0.3s;
 }
 
 #sidebar.expanded {
@@ -114,18 +95,15 @@ body {
     display: flex;
     justify-content: start;
     padding-left: 20px;
-
 }
 
 #sidebar.expanded nav a i {
     margin-right: 10px;
 }
 
-
-
-.icon {
-    text-align: center;
-  
+#content {
+    width: calc(100% - 80px);
+    transition: margin-left 0.3s;
 }
 
 .sota-logo {
@@ -178,55 +156,84 @@ body {
     }
 }
 
-.bubble:nth-child(1) {
-    width: 60px;
-    height: 60px;
-    left: 10%;
-    animation-duration: 4s;
-}
+.bubble:nth-child(1) { width: 60px; height: 60px; left: 10%; animation-duration: 14s; }
+.bubble:nth-child(2) { width: 40px; height: 40px; left: 25%; animation-duration: 12s; }
+.bubble:nth-child(3) { width: 70px; height: 70px; left: 40%; animation-duration: 18s; }
+.bubble:nth-child(4) { width: 30px; height: 30px; left: 55%; animation-duration: 10s; }
+.bubble:nth-child(5) { width: 80px; height: 80px; left: 70%; animation-duration: 16s; }
+.bubble:nth-child(6) { width: 50px; height: 50px; left: 85%; animation-duration: 20s; }
+.bubble:nth-child(7) { width: 90px; height: 90px; left: 100%; animation-duration: 22s; }
 
-.bubble:nth-child(2) {
-    width: 40px;
-    height: 40px;
-    left: 25%;
-    animation-duration: 5s;
-}
+@media (max-width: 500px) {
+    #sidebar {
+        width: 100%;
+        height: 60px;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: height 0.3s;
+    }
 
-.bubble:nth-child(3) {
-    width: 70px;
-    height: 70px;
-    left: 40%;
-    animation-duration: 5s;
-}
+    #sidebar nav {
+        flex-direction: row;
+        height: auto;
+        width: 100%;
+    }
 
-.bubble:nth-child(4) {
-    width: 50px;
-    height: 50px;
-    left: 60%;
-    animation-duration: 6s;
-}
+    #sidebar nav a {
+        flex: 1;
+        padding: 10px 0;
+        border-bottom: none;
+        border-right: 1px solid #3f3f3f4c;
+    }
 
-.bubble:nth-child(5) {
-    width: 45px;
-    height: 45px;
-    left: 80%;
-    animation-duration: 8s;
-}
+    #sidebar nav a:last-child {
+        border-right: none;
+    }
 
-.bubble:nth-child(6) {
-    width: 45px;
-    height: 45px;
-    left: 80%;
-    animation-duration: 4s;
-}
+    #sidebar.expanded {
+        height: 100vh;
+    }
 
-.bubble:nth-child(7) {
-    width: 45px;
-    height: 45px;
-    left: 80%;
-    animation-duration: 6s;
-}
+    #sidebar.expanded nav {
+        flex-direction: column;
+    }
 
+    #content {
+        width: 100%;
+    }
+
+    .container {
+        margin-right: 0;
+    }
+
+    .sota-logo {
+        width: 100px;
+        height: auto;
+    }
+    .swiper-container {
+        width: 100%;
+    }
+
+    .swiper-slide {
+        width: 100%; /* Đặt slide chiếm toàn bộ chiều rộng của container */
+        height: auto;
+        margin: 5px 0; /* Giảm khoảng cách giữa các slide */
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        font-size: 16px; /* Điều chỉnh kích thước nút điều hướng */
+    }
+
+    .swiper-pagination-bullet {
+        width: 8px; /* Điều chỉnh kích thước chấm phân trang */
+        height: 8px;
+    }
+}
 
 
 button {
@@ -253,66 +260,6 @@ button {
 }
 
 
-
-@media only screen and (max-width: 500px) {
-    .sota-logo{
-        flex: 1;
-        padding: 10px 0;
-        
-    }
-    .sidebar {
-        position: fixed;
-        width: 100%;
-        height: 60px;
-        bottom: 0;
-        top: auto;
-        left: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: #33333359;
-        /* flex-direction: column;
-        overflow-x: hidden; */
-        transform: translateY(100%);
-        transition: transform 0.3s ease;
-        z-index: 1000;
-    }
-    
-    .sidebar.active {
-        transform: translateY(0);
-    }
-
-    .sidebar a {
-        flex: 1;
-        padding: 10px 0;
-        font-size: 14px;
-    }
-    .sidebar.active {
-        transform: none;
-    }
-    .container {
-        margin-left: 0;
-        padding-bottom: 80px;
-    }
-    .sidebar-toggle {
-        display: block;
-    }
-    .a{
-        display: none;
-    }
-   
-   
-    .sidebar-toggle {
-        display: none;
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        font-size: 30px;
-        color: rgb(10, 9, 9);
-        cursor: pointer;
-        z-index: 1000;
-    }
-}
 
 
 .preply {
@@ -412,67 +359,6 @@ button {
   }
   
  
-  
-  @media (max-width: 500px) {
-    .navbar-nav {
-      flex-direction: column;
-    }
-    .nav-item {
-      margin-right: 0;
-    }
-    .nav-link {
-      padding: 1rem;
-    }
-    .a{
-        display: none;
-    }
-    .sidebar-toggle {
-        display: block;
-    }
-    .sidebar.active {
-        transform: none;
-    }
-    .sidebar{
-        background-color: #3333336e;
-       
-    }
-     .sidebar-toggle {
-        display: none;
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        font-size: 30px;
-        color: rgb(10, 9, 9);
-        cursor: pointer;
-        z-index: 1000;
-    }
-  }
-
-
-footer button:hover::after {
-    content: '↗';
-    font-size: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #eff307;
-    transition: 0.3s ease-in-out;
-    background: #050f67;
-}
-
-footer button:hover {
-    color: transparent;
-    background: none;
-    border: none;
-    padding: 0;
-}
-
-
     .blinking-light {
         position: relative;
         animation: blink 1s infinite alternate;
@@ -606,82 +492,3 @@ footer button:hover {
     /* Match the navigation button color */
 }
 
-
-@media only screen and (max-width: 500px) {
-    .sota-logo{
-        flex: 1;
-        padding: 10px 0;
-        
-    }
-    .sidebar {
-        position: fixed;
-        width: 100%;
-        height: 60px;
-        bottom: 0;
-        top: auto;
-        left: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: #33333359;
-        /* flex-direction: column;
-        overflow-x: hidden; */
-        transform: translateY(100%);
-        transition: transform 0.3s ease;
-        z-index: 1000;
-    }
-    
-    .sidebar.active {
-        transform: translateY(0);
-    }
-
-    .sidebar a {
-        flex: 1;
-        padding: 10px 0;
-        font-size: 14px;
-    }
-
-    .container {
-        margin-left: 0;
-        padding-bottom: 80px;
-    }
-  
-    .a{
-        display: none;
-    }
-   
-    .sidebar-toggle {
-        display: none;
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        font-size: 30px;
-        color: rgb(10, 9, 9);
-        cursor: pointer;
-        z-index: 1000;
-    }
-   
-}
-@media (max-width: 500px) {
-    .navbar-nav {
-      flex-direction: column;
-    }
-    .nav-item {
-      margin-right: 0;
-    }
-    .nav-link {
-      padding: 1rem;
-    }
-    .a{
-        display: none;
-    }
-    .sidebar-toggle {
-        display: block;
-    }
-    .sidebar{
-        background-color: #3333336e;
-    }
-  }
-  .swiper-slide-active{
-    width: 200px;
-  }

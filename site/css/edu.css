@@ -98,7 +98,7 @@
 .education-card {
 
   margin-bottom: 10px;
- 
+
   background: #080b6014;
 }
 
@@ -202,11 +202,12 @@ footer button {
   /* Change cursor to pointer on hover */
   margin-right: 20px;
   /* Add space between button and icons */
-}c
+}
 
+c
 /* Styling for social media icons */
 
- .fa-brands {
+.fa-brands {
   font-size: 20px;
   /* Icon size */
   color: #131312;
@@ -224,95 +225,119 @@ footer .fa-brands:hover {
 }
 
 @media only screen and (max-width: 500px) {
-  .sota-logo{
-      flex: 1;
-      padding: 10px 0;
-      
+  .sota-logo {
+    flex: 1;
+    padding: 10px 0;
+
   }
+
   .sidebar {
-      position: fixed;
-      width: 100%;
-      height: 60px;
-      bottom: 0;
-      top: auto;
-      left: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #33333359;
-      /* flex-direction: column;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #33333359;
+    /* flex-direction: column;
       overflow-x: hidden; */
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
-      z-index: 1000;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
   }
-  
+
   .sidebar.active {
-      transform: translateY(0);
+    transform: translateY(0);
   }
 
   .sidebar a {
-      flex: 1;
-      padding: 10px 0;
-      font-size: 14px;
+    flex: 1;
+    padding: 10px 0;
+    font-size: 14px;
   }
+
   .sidebar.active {
-      transform: none;
+    transform: none;
   }
+
   .container {
-      margin-left: 0;
-      padding-bottom: 80px;
+    margin-left: 0;
+    padding-bottom: 80px;
   }
+
   .sidebar-toggle {
-      display: block;
+    display: block;
   }
-  .a{
-      display: none;
+
+  .a {
+    display: none;
   }
- 
- 
+
+
   .sidebar-toggle {
-      display: none;
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      font-size: 30px;
-      color: rgb(10, 9, 9);
-      cursor: pointer;
-      z-index: 1000;
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    color: rgb(10, 9, 9);
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+
+  .swiper-slide iframe {
+    width: 90%;
+    height: auto;
+  }
+
+  body {
+    font-size: 14px;
+    /* Hoặc kích thước chữ mà bạn muốn */
   }
 }
+
 @media (max-width: 500px) {
   .navbar-nav {
     flex-direction: column;
   }
+
   .nav-item {
     margin-right: 0;
   }
+
   .nav-link {
     padding: 1rem;
   }
-  .a{
-      display: none;
+
+  .a {
+    display: none;
   }
+
   .sidebar-toggle {
-      display: block;
+    display: block;
   }
+
   .sidebar.active {
-      transform: none;
+    transform: none;
   }
-  .sidebar{
-      background-color: #3333336e;
-     
+
+  .sidebar {
+    background-color: #3333336e;
+
   }
-   .sidebar-toggle {
-      display: none;
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      font-size: 30px;
-      color: rgb(10, 9, 9);
-      cursor: pointer;
-      z-index: 1000;
+
+  .sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    color: rgb(10, 9, 9);
+    cursor: pointer;
+    z-index: 1000;
   }
 }
