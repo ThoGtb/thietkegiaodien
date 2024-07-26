@@ -1,0 +1,496 @@
+.header-text {
+    display: flex;
+    align-items: center;
+}
+
+
+.header-text span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+button {
+    background-color: #ffc107;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.fa-brands {
+    font-size: 20px;
+    color: #131312;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.fa-brands:hover {
+    color: #ede500;
+    text-shadow: 0 0 10px #ffc107;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(130deg, #06063f 20%, #31a2f2 100%);
+    font-family: Arial, sans-serif;
+}
+
+#sidebar {
+    width: 80px;
+    transition: width 0.3s;
+    background: linear-gradient(130deg, #015794a8 20%, #09096e 80%);
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+}
+
+#sidebar nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* Add this to distribute nav items evenly */
+    height: 50%;
+    /* Add this to make nav take full height */
+
+}
+
+#sidebar a {
+    text-decoration: none;
+    color: black;
+    padding: 16px 0;
+    text-align: center;
+    width: 100%;
+    transition: background 0.3s;
+    border-bottom: 1px solid #3f3f3f4c;
+}
+
+#sidebar a:hover {
+    color: #d1a411;
+    border-left: 2px solid #d1a411;
+}
+
+#sidebar a.active {
+    color: #d1a411;
+    border-left: 2px solid #d1a411;
+}
+
+
+
+#sidebar.active {
+    background-color: #444;
+}
+
+#content {
+
+    padding: 20px;
+    width: calc(100% - 80px);
+    transition: margin-left 0.3s;
+}
+
+#sidebar.expanded {
+    width: 250px;
+}
+
+#sidebar.expanded nav a {
+    display: flex;
+    justify-content: start;
+    padding-left: 20px;
+
+}
+
+#sidebar.expanded nav a i {
+    margin-right: 10px;
+}
+
+
+.icon {
+
+    text-align: center;
+}
+
+
+
+
+
+.sota-logo {
+    height: 100px;
+    /* Chiều cao của logo */
+
+}
+
+
+.preply {
+
+    mix-blend-mode: multiply;
+    width: 200px;
+    height: 150px;
+    /* This will blend the white background with the blue background */
+}
+
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+}
+
+.header img {
+    display: block;
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: calc((100% - 60px) / 2) !important;
+  
+    /* adjust the width of each slide */
+    margin: 10px;
+    /* add some margin between slides */
+    border-radius: 10px;
+    /* add some border radius to each slide */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* add some box shadow to each slide */
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* make the image cover the entire slide */
+    text-align: center;
+    /* add some border radius to each image */
+}
+
+swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    width: 200px;
+    height: calc((100% - 40px) / 2) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-md-7 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+}
+
+.service-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Swiper Container */
+.swiper-container {
+    width: 560px;
+    height: 490px;
+    overflow: hidden;
+    margin-top: -30px;
+}
+
+/* Swiper Wrapper */
+.swiper-wrapper {
+
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+/* Individual Swiper Slides */
+.swiper-slide {
+    /* width: calc(100% / 4 - 20px);
+    height: auto; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #1a2a41;
+    /* Màu nền của slide */
+    border-radius: 10px;
+    margin: 10px;
+    position: relative;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    height: auto;
+    /* Đảm bảo ảnh không bị vỡ */
+    border-radius: 10px;
+}
+
+
+/* Swiper Pagination */
+.swiper-pagination-bullet {
+    background: #ffa600;
+    /* Match the pagination color */
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ffa600;
+    /* Match the navigation button color */
+}
+
+.bubble-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    /* Start off screen */
+    width: 50px;
+    height: 50px;
+    background-color: rgb(246, 255, 0);
+    /* Adjust color and opacity */
+    border-radius: 50%;
+    animation: rise 10s infinite ease-in-out;
+}
+
+/* Keyframes for bubble rise animation */
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh);
+        /* Move to top of the viewport */
+        opacity: 0;
+    }
+}
+
+/* Generate multiple bubbles with different sizes and speeds */
+.bubble:nth-child(1) {
+    width: 60px;
+    height: 60px;
+    left: 10%;
+    animation-duration: 2s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 40px;
+    height: 40px;
+    left: 25%;
+    animation-duration: 5s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(3) {
+    width: 70px;
+    height: 70px;
+    left: 40%;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    left: 60%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(5) {
+    width: 45px;
+    height: 45px;
+    left: 80%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(6) {
+    width: 45px;
+    height: 45px;
+    left: 70%;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(7) {
+    width: 45px;
+    height: 45px;
+    left: 50%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
+
+.sidebar.active {
+    transform: translateY(-100%);
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    text-align: center;
+    padding: 10px 15px;
+    margin-top: 6px;
+    border-bottom: 1px solid #3f3f3f4c;
+}
+
+@media only screen and (max-width: 500px) {
+    .sota-logo {
+        flex: 1;
+        padding: 10px 0;
+
+    }
+
+    .sidebar {
+        position: fixed;
+        width: 100%;
+        height: 60px;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #33333359;
+        /* flex-direction: column;
+        overflow-x: hidden; */
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        transform: translateY(0);
+    }
+
+    .sidebar a {
+        flex: 1;
+        padding: 10px 0;
+        font-size: 14px;
+    }
+
+    .container {
+        margin-left: 0;
+        padding-bottom: 80px;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .a {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: none;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        font-size: 30px;
+        color: rgb(10, 9, 9);
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+}
+
+.sidebar a:hover {
+    color: #d1a411;
+    border-left: 2px solid #d1a411;
+}
+
+.sidebar a.active {
+    color: #d1a411;
+    border-left: 2px solid #d1a411;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   border-radius: 5px;
+  
+    background: rgba(245, 0, 225, 0.251);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+}
+
+.swiper-slide:hover .overlay {
+    opacity: 1;
+}
+
+.overlay .text {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        margin-right: 0;
+    }
+
+    .nav-link {
+        padding: 1rem;
+    }
+
+    .a {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        background-color: #3333336e;
+    }
+}
+
+#swiper-wrapper-55c41689a91e07c9 {
+    width: 1036px;
+    transition-duration: 0ms;
+    transform: translate3d(0px, 0px, 0px);
+    transition-delay: 0ms;
+}

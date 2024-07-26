@@ -1,0 +1,624 @@
+.container {
+    display: flex;
+
+}
+
+.language-switch {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.language-switch p {
+    margin: 5px 0;
+}
+
+
+.bubble-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    /* Start off screen */
+    width: 50px;
+    height: 50px;
+    background-color: rgb(246, 255, 0);
+    /* Adjust color and opacity */
+    border-radius: 50%;
+    animation: rise 10s infinite ease-in-out;
+}
+
+/* Keyframes for bubble rise animation */
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh);
+        /* Move to top of the viewport */
+        opacity: 0;
+    }
+}
+
+/* Generate multiple bubbles with different sizes and speeds */
+.bubble:nth-child(1) {
+    width: 60px;
+    height: 60px;
+    left: 10%;
+    animation-duration: 2s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 40px;
+    height: 40px;
+    left: 25%;
+    animation-duration: 5s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(3) {
+    width: 70px;
+    height: 70px;
+    left: 40%;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    left: 60%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(5) {
+    width: 45px;
+    height: 45px;
+    left: 80%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(6) {
+    width: 45px;
+    height: 45px;
+    left: 70%;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(7) {
+    width: 45px;
+    height: 45px;
+    left: 50%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
+
+.stats h1 {
+    margin: 10px 0;
+    font-size: 48px;
+}
+
+.stats p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.stats button {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: start;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav li {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.skills {
+    margin-top: 5px;
+}
+
+.skills h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icons img {
+    width: 40px;
+    height: 40px;
+}
+
+.container {
+    padding: 10px;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+
+}
+
+.nav-item:hover {
+    border-bottom: 1px solid rgb(104, 98, 98);
+}
+
+.nav-item {
+    position: relative;
+    padding-bottom: 4px;
+    cursor: pointer;
+    height: fit-content;
+    font-weight: bold;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 60%;
+    background-color: white;
+    transition: width 0.3s;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after,
+.nav-item.clicked::after {
+    width: 100%;
+}
+
+.nav-item.active {
+    color: #ffcc00;
+
+}
+
+.content {
+    line-height: 2;
+    padding-top: 20px;
+    font-size: 16px;
+    color: #edede77c;
+    text-align: start;
+}
+
+.mt-8 {
+    margin-top: -110px;
+
+}
+
+#col {
+    font-size: 20px;
+}
+
+.img {
+    height: 25px;
+    width: 25px;
+}
+
+/* Make the cards display in a grid with 2 columns */
+#col-md-5 {
+
+    transform: translateX(100%);
+    animation: slideLeft 0.5s ease-in-out forwards, reverseSlide 0.5s ease-in-out forwards 0.5s;
+}
+
+#col-md-7 {
+    transform: translateX(100%);
+    animation: slideRight 0.5s ease-in-out forwards, reverseSlide 0.5s ease-in-out forwards 0.5s;
+}
+
+
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes reverseSlide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+footer {
+    position: fixed;
+    /* Fixed position for the footer */
+    bottom: 0;
+    /* Place it at the bottom of the viewport */
+    width: 100%;
+    /* Full width */
+    padding: 20px;
+    /* Add padding */
+    text-align: center;
+    /* Center text */
+
+    color: white;
+    /* White text color */
+}
+
+/* Styling for the "My Work" button */
+footer button {
+    background-color: #ffc107;
+    /* Yellow button color */
+    color: white;
+    /* White text color */
+    padding: 10px 20px;
+    /* Padding for the button */
+    border: none;
+    /* Remove default border */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 16px;
+    /* Button text size */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+    margin-right: 20px;
+    /* Add space between button and icons */
+}
+
+/* Styling for social media icons */
+footer .fa-brands {
+    font-size: 20px;
+    /* Icon size */
+    color: #131312;
+    /* Yellow icon color */
+    margin: 0 10px;
+    /* Space between icons */
+}
+
+footer .fa-brands:hover {
+    color: #ede500;
+    /* White icon color on hover */
+    text-shadow: 0 0 10px #ffc107;
+    /* Add a yellow glow effect */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(130deg, #01013a 20%, #31a2f2 100%);
+    font-family: Arial, sans-serif;
+}
+
+#sidebar {
+    width: 80px;
+    transition: width 0.3s;
+    background: linear-gradient(130deg, #015794a8 20%, #09096e 80%);
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+}
+
+#sidebar nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* Add this to distribute nav items evenly */
+    height: 50%;
+    /* Add this to make nav take full height */
+
+}
+
+#sidebar a {
+    text-decoration: none;
+    color: black;
+    padding: 16px 0;
+    text-align: center;
+    width: 100%;
+    transition: background 0.3s;
+    border-bottom: 1px solid #3f3f3f4c;
+}
+
+#sidebar a:hover {
+    color: #d1a411;
+    border-left: 2px solid #d1a411;
+}
+
+#sidebar a.active {
+    color: #d1a411;
+    border-left: 2px solid #d1a411;
+}
+
+
+
+#sidebar.active {
+    background-color: #444;
+}
+
+#content {
+
+    padding: 20px;
+    width: calc(100% - 80px);
+    transition: margin-left 0.3s;
+}
+
+#sidebar.expanded {
+    width: 250px;
+}
+
+#sidebar.expanded nav a {
+    display: flex;
+    justify-content: start;
+    padding-left: 20px;
+
+}
+
+#sidebar.expanded nav a i {
+    margin-right: 10px;
+}
+
+.icon {
+    text-align: center;
+
+}
+
+.sota-logo {
+    height: 100px;
+}
+
+.container {
+    margin-right: 260px;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-top: -20px;
+}
+
+.header img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .sota-logo {
+        flex: 1;
+        padding: 10px 0;
+
+    }
+
+    .sidebar {
+        position: fixed;
+        width: 100%;
+        height: 60px;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #33333359;
+        /* flex-direction: column;
+        overflow-x: hidden; */
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        transform: translateY(0);
+    }
+
+    .sidebar a {
+        flex: 1;
+        padding: 10px 0;
+        font-size: 14px;
+    }
+
+    .container {
+        margin-left: 0;
+        padding-bottom: 80px;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .a {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: none;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        font-size: 30px;
+        color: rgb(10, 9, 9);
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        margin-right: 0;
+    }
+
+    .nav-link {
+        padding: 1rem;
+    }
+
+    .a {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        background-color: #3333336e;
+    }
+}
+
+button {
+    background-color: #ffc107;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.fa-brands {
+    font-size: 20px;
+    color: #131312;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.fa-brands:hover {
+    color: #ede500;
+    text-shadow: 0 0 10px #ffc107;
+}
+
+
+
+.preply {
+
+    mix-blend-mode: multiply;
+    width: 200px;
+    height: 150px;
+    /* This will blend the white background with the blue background */
+}
+
+/* Make the cards display in a grid with 2 columns */
+.col-md-7 {
+
+    transform: translateX(100%);
+    animation: slideDown 0.5s ease-in-out forwards, reverseSlide 0.5s ease-in-out forwards 0.5s;
+}
+
+.col-md-5 {
+    transform: translateY(100%);
+    animation: slideRight 0.5s ease-in-out forwards, reverseSlide 0.5s ease-in-out forwards 0.5s;
+}
+
+
+
+@keyframes slideDown {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes reverseSlide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.col-md-7 {
+    color: rgba(240, 248, 255, 0.174);
+    margin-top: 20px;
+}
+
+.headline {
+    font-size: 70px;
+    margin-bottom: 20px; /* Add space below the headline */
+}
+
+.intro-text {
+    margin-bottom: 40px; /* Add space below the paragraph */
+}
+
+.inline-paragraphs {
+    display: flex;
+    gap: 20px; /* Adjust spacing between items */
+}
+
+.inline-paragraphs p {
+    display: inline-block;
+    margin: 0; /* Remove margin for alignment */
+}

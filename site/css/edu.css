@@ -1,0 +1,318 @@
+/* Add this to your edu.css file */
+
+.container {
+  margin-top: 10px;
+  /* adjust the margin top to your liking */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -30px;
+}
+
+/* .education-card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-y: auto;
+  padding: 20px;
+  max-height: calc(100vh - 200px); 
+} */
+.bubble-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  /* Start off screen */
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 165, 0, 0.7);
+  /* Adjust color and opacity */
+  border-radius: 50%;
+  animation: rise 10s infinite ease-in-out;
+}
+
+/* Keyframes for bubble rise animation */
+@keyframes rise {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100vh);
+    /* Move to top of the viewport */
+    opacity: 0;
+  }
+}
+
+/* Generate multiple bubbles with different sizes and speeds */
+.bubble:nth-child(1) {
+  width: 60px;
+  height: 60px;
+  left: 10%;
+  animation-duration: 12s;
+  animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+  width: 40px;
+  height: 40px;
+  left: 25%;
+  animation-duration: 15s;
+  animation-delay: 3s;
+}
+
+.bubble:nth-child(3) {
+  width: 70px;
+  height: 70px;
+  left: 40%;
+  animation-duration: 10s;
+  animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+  width: 50px;
+  height: 50px;
+  left: 60%;
+  animation-duration: 8s;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(5) {
+  width: 45px;
+  height: 45px;
+  left: 80%;
+  animation-duration: 11s;
+  animation-delay: 2s;
+}
+
+.education-card {
+
+  margin-bottom: 10px;
+ 
+  background: #080b6014;
+}
+
+.education-card h2 {
+
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.education-card h3 {
+
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.education-card p {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+
+
+/* Make the cards display in a grid with 2 columns */
+.col-md-7 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+
+  transform: translateY(100%);
+  animation: slideDown 0.5s ease-in-out forwards, reverseSlide 0.5s ease-in-out forwards 0.5s;
+}
+
+.col-md-5 {
+  transform: translateY(100%);
+  animation: slideUp 0.5s ease-in-out forwards, reverseSlide 0.5s ease-in-out forwards 0.5s;
+}
+
+
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes reverseSlide {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+footer {
+  position: fixed;
+  /* Fixed position for the footer */
+  bottom: 0;
+  /* Place it at the bottom of the viewport */
+  width: 100%;
+  /* Full width */
+  padding: 20px;
+  /* Add padding */
+  text-align: center;
+  /* Center text */
+
+  color: white;
+  /* White text color */
+}
+
+/* Styling for the "My Work" button */
+footer button {
+  background-color: #ffc107;
+  /* Yellow button color */
+  color: white;
+  /* White text color */
+  padding: 10px 20px;
+  /* Padding for the button */
+  border: none;
+  /* Remove default border */
+  border-radius: 5px;
+  /* Rounded corners */
+  font-size: 16px;
+  /* Button text size */
+  cursor: pointer;
+  /* Change cursor to pointer on hover */
+  margin-right: 20px;
+  /* Add space between button and icons */
+}c
+
+/* Styling for social media icons */
+
+ .fa-brands {
+  font-size: 20px;
+  /* Icon size */
+  color: #131312;
+  /* Yellow icon color */
+  margin: 0 10px;
+  /* Space between icons */
+  padding: 5px;
+}
+
+footer .fa-brands:hover {
+  color: #ede500;
+  /* White icon color on hover */
+  text-shadow: 0 0 10px #ffc107;
+  /* Add a yellow glow effect */
+}
+
+@media only screen and (max-width: 500px) {
+  .sota-logo{
+      flex: 1;
+      padding: 10px 0;
+      
+  }
+  .sidebar {
+      position: fixed;
+      width: 100%;
+      height: 60px;
+      bottom: 0;
+      top: auto;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #33333359;
+      /* flex-direction: column;
+      overflow-x: hidden; */
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+  }
+  
+  .sidebar.active {
+      transform: translateY(0);
+  }
+
+  .sidebar a {
+      flex: 1;
+      padding: 10px 0;
+      font-size: 14px;
+  }
+  .sidebar.active {
+      transform: none;
+  }
+  .container {
+      margin-left: 0;
+      padding-bottom: 80px;
+  }
+  .sidebar-toggle {
+      display: block;
+  }
+  .a{
+      display: none;
+  }
+ 
+ 
+  .sidebar-toggle {
+      display: none;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      font-size: 30px;
+      color: rgb(10, 9, 9);
+      cursor: pointer;
+      z-index: 1000;
+  }
+}
+@media (max-width: 500px) {
+  .navbar-nav {
+    flex-direction: column;
+  }
+  .nav-item {
+    margin-right: 0;
+  }
+  .nav-link {
+    padding: 1rem;
+  }
+  .a{
+      display: none;
+  }
+  .sidebar-toggle {
+      display: block;
+  }
+  .sidebar.active {
+      transform: none;
+  }
+  .sidebar{
+      background-color: #3333336e;
+     
+  }
+   .sidebar-toggle {
+      display: none;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      font-size: 30px;
+      color: rgb(10, 9, 9);
+      cursor: pointer;
+      z-index: 1000;
+  }
+}
