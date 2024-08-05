@@ -16,6 +16,24 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+     <style>
+        .stat {
+            color: rgba(244, 189, 10, 0.813);
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .description {
+            color: white;
+        }
+
+        .stat-container {
+            border-left: 2px solid #a19c9c33;
+            padding-left: 50px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+     </style>
 </head>
 
 <body>
@@ -49,9 +67,9 @@
 
                     <div class="inline-paragraphs"
                     
-                        style=" font-size: 16px; color: rgba(240, 248, 255, 0.5); margin-top: -20px;  column-gap: 1.5rem;">
+                        style=" font-size: 16px; color: rgba(240, 248, 255, 0.5); margin-top: -20px;  column-gap: 1.5rem;" onclick="animateNumbers()">
                         
-                        <p> <span
+                        <!-- <p> <span
                                 style="color: rgba(244, 189, 10, 0.813); font-weight: bold;font-size: 30px;">10+</span><br><span
                                 style="color: white;">YEARS OF EXPERIENCE</span></p>
                         <p style="border-left: 2px solid #a19c9c33; padding-left: 50px;"> <span
@@ -62,7 +80,12 @@
                                 style="color: white;">FINISHED PROJECTS</span></p>
                         <p style="border-left: 2px solid #a19c9c33; padding-left: 50px; "> <span
                                 style="color: rgba(244, 189, 10, 0.813); font-weight: bold;font-size: 30px;">10+</span><br><span
-                                style="color: white;">WINNING AWARDS</span></p>
+                                style="color: white;">WINNING AWARDS</span></p> -->
+
+                                <p><span class="stat" data-target="10">0</span><span style="color: #d1a411; font-size: 30px;">+</span><br><span class="description">YEARS OF EXPERIENCE</span></p>
+                                <p class="stat-container"><span class="stat" data-target="250">0</span><span style="color: #d1a411; font-size: 30px;">+</span><br><span class="description">SATISFIED CLIENTS</span></p>
+                                <p class="stat-container"><span class="stat" data-target="650">0</span><span style="color: #d1a411; font-size: 30px;">+</span><br><span class="description">FINISHED PROJECTS</span></p>
+                                <p class="stat-container"><span class="stat" data-target="10">0</span><span style="color: #d1a411; font-size: 30px;">+</span><br><span class="description">WINNING AWARDS</span></p>
                     </div>
 
 
@@ -145,7 +168,28 @@
 
     <div class="bubble-container"></div>
     <script src="https://kit.fontawesome.com/f6dce9b617.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stats = document.querySelectorAll('.stat');
+            stats.forEach(stat => {
+                const updateCount = () => {
+                    const target = +stat.getAttribute('data-target');
+                    const count = +stat.innerText;
 
+                    const increment = target / 100;
+
+                    if (count < target) {
+                        stat.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        stat.innerText = target;
+                    }
+                };
+
+                updateCount();
+            });
+        });
+    </script>
     <script>
         function showContent(contentId) {
             const contents = document.querySelectorAll('.content');
