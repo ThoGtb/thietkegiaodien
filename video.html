@@ -75,7 +75,7 @@
             color: black;
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 500px) {
 
             .swiper-button-next,
             .swiper-button-prev {
@@ -129,10 +129,33 @@
                 transform: translateY(0);
             }
         }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(216, 113, 254, 0.8);
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 3s ease;
+            pointer-events: none;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        body.transitioning {
+            overflow: hidden;
+        }
     </style>
 </head>
 
 <body>
+    <div class="overlay" id="overlay"></div>
     <section id="sidebar">
         <nav>
             <a href="index.html"><i class="fa-solid fa-house"></i><br>Home</a>
@@ -152,7 +175,7 @@
         <div class="container mt-8" style="margin-top: -150px;">
             <div class="row">
                 <div class="col-md-5" style="margin-top: -20px;">
-                    <h1 style="padding-top: 100px;  padding-right: 40px; font-size: 100px; color: transparent; /* Ẩn màu chữ */
+                    <h1 style="padding-top: 100px;  padding-right: 40px; font-size: 100px; color: transparent; 
                         -webkit-text-stroke: 2px rgb(227, 163, 24); 
                         text-stroke: 2px rgb(227, 163, 24); text-align: start;
                        ">
@@ -234,7 +257,7 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Initialize Swiper -->
+
     <script>
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
@@ -246,8 +269,6 @@
                 prevEl: ".swiper-button-prev",
             },
         });
-    </script>
-    <script>
         document.addEventListener('DOMContentLoaded', function () {
 
             var toggleButton = document.querySelector('.sidebar-toggle');
@@ -256,7 +277,23 @@
             toggleButton.addEventListener('click', function () {
                 sidebar.classList.toggle('active');
             });
+            // Lấy tất cả các liên kết trong thanh điều hướng
+            var links = document.querySelectorAll('#sidebar a');
+            var overlay = document.getElementById('overlay');
+
+            links.forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+                    overlay.classList.add('active');
+                    document.body.classList.add('transitioning');
+
+                    setTimeout(function () {
+                        window.location.href = link.href;
+                    }, 1000); // Thay đổi trang sau 3 giây
+                });
+            });
         });
+
     </script>
     <script src="https://kit.fontawesome.com/f6dce9b617.js" crossorigin="anonymous"></script>
 </body>

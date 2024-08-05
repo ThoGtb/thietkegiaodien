@@ -207,17 +207,14 @@ html {
 
 .bubble {
     position: absolute;
-    bottom: -100px;
-    /* Start off screen */
+    bottom: -100px;    
     width: 50px;
     height: 50px;
     background-color: rgb(255, 255, 0);
-    /* Adjust color and opacity */
     border-radius: 50%;
     animation: rise 10s infinite ease-in-out;
 }
 
-/* Keyframes for bubble rise animation */
 @keyframes rise {
     0% {
         transform: translateY(0);
