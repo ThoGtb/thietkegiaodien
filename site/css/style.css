@@ -273,6 +273,7 @@ button {
         cursor: pointer;
         z-index: 1000;
     }
+
 }
 
 
@@ -375,7 +376,10 @@ button {
 
 
 
-@media (max-width: 500px) {
+@media only screen and (max-width: 500px) {
+    #content{
+        width: 100%;
+    }
     .navbar-nav {
         flex-direction: column;
     }
@@ -465,8 +469,59 @@ button {
         width: 90%;
         height: auto;
     }
+   
 }
+@media (max-width: 500px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
 
+    .nav-item {
+        margin-right: 0;
+    }
+
+    .nav-link {
+        padding: 1rem;
+    }
+
+    .a {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        background-color: #3333336e;
+    }
+    .stat {
+        font-size: 20px;
+    }
+
+    .stat-container {
+        border-left: none;
+        padding-left: 0;
+        margin-right: 0;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .sota-logo, .preply {
+        width: 100px;
+        height: 50px;
+    }
+
+}
 .overlay {
     position: fixed;
     top: 0;
