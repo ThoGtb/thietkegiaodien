@@ -505,6 +505,9 @@ body {
         width: 100px;
         height: auto;
     }
+    .inline-paragraphs{
+        display: none;
+    }
 }
 
 @media (max-width: 500px) {
@@ -558,26 +561,15 @@ body {
     }
 
     .inline-paragraphs {
+   
+       visibility: hidden;
+    }
+    .nav{
+        margin-top: -150px;
+       
+    }
+    body{
         text-align: center;
-    }
-    .stat-container, .stat {
-        font-size: 14px; 
-    }
-
-    .stat {
-        display: block;
-        margin-bottom: 5px; /* Thêm khoảng cách giữa các mục */
-    }
-
-    .stat-container {
-        font-size: 14px; /* Thu nhỏ kích thước font của mô tả */
-        border-left: none; /* Loại bỏ đường viền bên trái để tiết kiệm không gian */
-        border-right: none; /* Loại bỏ đường viền bên phải để tiết kiệm không gian */
-        padding-left: 5px; /* Thu nhỏ khoảng cách bên trái */
-    }
-
-    .description {
-        font-size: 12px; /* Thu nhỏ kích thước font của mô tả */
     }
 }
 
