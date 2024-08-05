@@ -340,4 +340,7 @@ footer .fa-brands:hover {
     cursor: pointer;
     z-index: 1000;
   }
+  .footer{
+    margin-top: -20px;
+  }
 }
