@@ -164,7 +164,19 @@ body {
 .bubble:nth-child(6) { width: 50px; height: 50px; left: 85%; animation-duration: 20s; }
 .bubble:nth-child(7) { width: 90px; height: 90px; left: 100%; animation-duration: 22s; }
 
-@media (max-width: 500px) {
+@media only screen and (max-width: 500px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+    
+    #sidebar.active {
+        transform: none;
+    }
+
+    #sidebar {
+        background-color: #3333336e;
+
+    }
     #sidebar {
         width: 100%;
         height: 60px;
@@ -176,7 +188,6 @@ body {
         align-items: center;
         transition: height 0.3s;
     }
-
     #sidebar nav {
         flex-direction: row;
         height: auto;
@@ -202,6 +213,20 @@ body {
         flex-direction: column;
     }
 
+    .sidebar-toggle {
+        display: none;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        font-size: 30px;
+        color: rgb(10, 9, 9);
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+   
+
+    
     #content {
         width: 100%;
     }
@@ -232,6 +257,47 @@ body {
     .swiper-pagination-bullet {
         width: 8px; /* Điều chỉnh kích thước chấm phân trang */
         height: 8px;
+    }
+    #sidebar {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: block;
+        background-color: #d1a411;
+        border: none;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .sota-logo, .preply {
+        width: 100px;
+        height: auto;
+    }
+
+    .swiper-container {
+        height: auto;
+    }
+
+    .swiper-slide {
+        width: 100%;
+        height: auto;
+    }
+
+    .col-md-5, .col-md-7 {
+        width: 100%;
+        margin-top: 10px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
     }
 }
 
@@ -492,3 +558,96 @@ button {
     /* Match the navigation button color */
 }
 
+
+
+@media (max-width: 500px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        margin-right: 0;
+    }
+
+    .nav-link {
+        padding: 1rem;
+    }
+
+    .image1 {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    #sidebar.active {
+        transform: none;
+    }
+
+    #sidebar {
+        background-color: #3333336e;
+
+    }
+    #sidebar {
+        width: 100%;
+        height: 60px;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: height 0.3s;
+    }
+
+    #sidebar nav {
+        flex-direction: row;
+        height: auto;
+        width: 100%;
+    }
+
+    #sidebar nav a {
+        flex: 1;
+        padding: 10px 0;
+        border-bottom: none;
+        border-right: 1px solid #3f3f3f4c;
+    }
+
+    #sidebar nav a:last-child {
+        border-right: none;
+    }
+
+    #sidebar.expanded {
+        height: 100vh;
+    }
+
+    #sidebar.expanded nav {
+        flex-direction: column;
+    }
+
+    .sidebar-toggle {
+        display: none;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        font-size: 30px;
+        color: rgb(10, 9, 9);
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .image1 {
+        display: none;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: block;
+    }
+
+    .swiper-slide iframe {
+        width: 90%;
+        height: auto;
+    }
+}

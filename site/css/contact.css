@@ -193,6 +193,9 @@ body {
     button[type="submit"] {
         padding: 8px 16px; /* Giảm padding cho nút gửi trên màn hình nhỏ */
     }
+    .contact-form{
+        margin-left: 10px;
+    }
 }
 
 .btn {

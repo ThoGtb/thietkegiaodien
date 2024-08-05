@@ -528,6 +528,35 @@ body {
     .sidebar {
         background-color: #3333336e;
     }
+    .stat {
+        font-size: 20px;
+    }
+
+    .stat-container {
+        border-left: none;
+        padding-left: 0;
+        margin-right: 0;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .sota-logo, .preply {
+        width: 100px;
+        height: 50px;
+    }
+
+    .inline-paragraphs {
+        text-align: center;
+    }
 }
 
 button {
