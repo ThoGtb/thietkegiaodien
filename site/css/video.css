@@ -161,6 +161,7 @@ html {
         cursor: pointer;
         z-index: 1000;
     }
+
     .swiper-button-next,
     .swiper-button-prev {
         display: block;
@@ -170,6 +171,7 @@ html {
         width: 90%;
         height: auto;
     }
+
 }
 
 @media (max-width: 500px) {
@@ -196,7 +198,12 @@ html {
     .sidebar {
         background-color: #3333336e;
     }
+
+    .col-md-7 {
+        margin-top: 7px;
+    }
 }
+
 
 .bubble {
     position: absolute;
