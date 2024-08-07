@@ -341,6 +341,9 @@ footer .fa-brands:hover {
     z-index: 1000;
   }
   .footer{
-    margin-top: -20px;
+    margin-top: -70px;
+  }
+  body{
+    margin-top: -40px;
   }
 }

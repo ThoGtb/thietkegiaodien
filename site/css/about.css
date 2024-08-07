@@ -571,6 +571,45 @@ body {
     body{
         text-align: center;
     }
+    .navbar-nav {
+        flex-direction: column;
+      }
+    
+      .nav-item {
+        margin-right: 0;
+      }
+    
+      .nav-link {
+        padding: 1rem;
+      }
+    
+      .a {
+        display: none;
+      }
+    
+      .sidebar-toggle {
+        display: block;
+      }
+    
+      .sidebar.active {
+        transform: none;
+      }
+    
+      .sidebar {
+        background-color: #3333336e;
+    
+      }
+    
+      .sidebar-toggle {
+        display: none;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        font-size: 30px;
+        color: rgb(10, 9, 9);
+        cursor: pointer;
+        z-index: 1000;
+      }
 }
 
 button {

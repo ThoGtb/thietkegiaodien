@@ -213,20 +213,8 @@ body {
         flex-direction: column;
     }
 
-    .sidebar-toggle {
-        display: none;
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        font-size: 30px;
-        color: rgb(10, 9, 9);
-        cursor: pointer;
-        z-index: 1000;
-    }
-
-   
-
     
+  
     #content {
         width: 100%;
     }
@@ -244,11 +232,9 @@ body {
     }
 
     .swiper-slide {
-        width: 100%; /* Đặt slide chiếm toàn bộ chiều rộng của container */
-        height: auto;
-        margin: 5px 0; /* Giảm khoảng cách giữa các slide */
+        width: calc((100% - 20px) / 2); /* Adjust to fit two slides per view */
+        flex-shrink: 0;
     }
-
     .swiper-button-next,
     .swiper-button-prev {
         font-size: 16px; /* Điều chỉnh kích thước nút điều hướng */
@@ -262,14 +248,7 @@ body {
         display: none;
     }
 
-    .sidebar-toggle {
-        display: block;
-        background-color: #d1a411;
-        border: none;
-        padding: 10px;
-        font-size: 20px;
-        cursor: pointer;
-    }
+
 
     .sota-logo, .preply {
         width: 100px;
